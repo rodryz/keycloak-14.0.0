@@ -146,11 +146,11 @@
                     </security>
                 </datasource>
 		<datasource jndi-name="java:/jboss/datasources/KeycloakDS" pool-name="KeycloakDS" enabled="true">
-		    <connection-url>jdbc:mysql://koine-keycloak-db.mysql.database.azure.com:3306/keycloak?useSSL=false&amp;characterEncoding=UTF-8</connection-url>
+		    <connection-url>jdbc:mysql://koine-keycloak-db.mysql.database.azure.com:3306/keycloak?useSSL=false&amp;characterEncoding=UTF-8&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true&amp;autoReconnect=true</connection-url>
 		    <driver>mysql</driver>
 		    <pool>
 			<min-pool-size>5</min-pool-size>
-			<max-pool-size>15</max-pool-size>
+			<max-pool-size>30</max-pool-size>
 		    </pool>
 		    <security>
 			<user-name>keycloak@koine-keycloak-db.mysql.database.azure.com</user-name>
@@ -161,12 +161,19 @@
 			<validate-on-match>true</validate-on-match>
 			<exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLExceptionSorter"/>
 		    </validation>
+	            <statement>
+                    	<track-statements>true</track-statements>
+                    </statement>
+                    <timeout>
+                    	<blocking-timeout-millis>6000</blocking-timeout-millis>
+                    	<allocation-retry>3</allocation-retry>
+                    </timeout>
 		</datasource>
                 <drivers>
                     <driver name="h2" module="com.h2database.h2">
                         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
                     </driver>
-		    <driver name="mysql" module="com.mysql">
+		    <driver name="mysql" module="com.mysql">y
 			<driver-class>com.mysql.jdbc.Driver</driver-class>
 		    </driver>
                 </drivers>
@@ -589,7 +596,7 @@
                 </process-id>
             </core-environment>
             <recovery-environment socket-binding="txn-recovery-environment" status-socket-binding="txn-status-manager"/>
-            <coordinator-environment statistics-enabled="${wildfly.transactions.statistics-enabled:${wildfly.statistics-enabled:false}}"/>
+            <coordinator-environment default-timeout="36000" statistics-enabled="${wildfly.transactions.statistics-enabled:${wildfly.statistics-enabled:false}}"/>
             <object-store path="tx-object-store" relative-to="jboss.server.data.dir"/>
         </subsystem>
         <subsystem xmlns="urn:jboss:domain:undertow:12.0" default-server="default-server" default-virtual-host="default-host" default-servlet-container="default" default-security-domain="other" statistics-enabled="${wildfly.undertow.statistics-enabled:${wildfly.statistics-enabled:false}}">
