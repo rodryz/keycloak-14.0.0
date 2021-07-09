@@ -1,11 +1,11 @@
 body {
-    background: #0059b3 !important;
+    background: #c85e06 !important;
 }
 
 .login-pf body {
     /*background: url("../img/keycloak-bg.png") no-repeat center center fixed;*/
-    background: #0059b3 !important;
-    background-color: #0059b3 !important;
+    background: #c85e06 !important;
+    background-color: #c85e06 !important;
     background-size: cover;
     height: 100%;
 }
@@ -552,6 +552,7 @@ ul#kc-totp-supported-apps {
 }
 
 .login-pf-page .login-pf-brand {
+    background: #c85e06 !important;
     margin-top: 20px;
     max-width: 360px;
     width: 40%;
