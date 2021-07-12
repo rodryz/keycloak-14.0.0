@@ -36,8 +36,8 @@
     </#if>
 </head>
 
-<body class="${properties.kcBodyClass!}" style="background: #c85e06 !important">
-<div class="${properties.kcLoginClass!}" style="background: #c85e06 !important">
+<body class="${properties.kcBodyClass!}" style="background: #c0ce29 !important">
+<div class="${properties.kcLoginClass!}" style="background: #c0ce29 !important">
     <div id="kc-header" class="${properties.kcHeaderClass!}">
         <div id="kc-header-wrapper"
              class="${properties.kcHeaderWrapperClass!}">${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}</div>

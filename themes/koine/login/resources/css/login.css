@@ -1,11 +1,11 @@
 body {
-    background: #c85e06 !important;
+    background: #c0ce29 !important;
 }
 
 .login-pf body {
     /*background: url("../img/keycloak-bg.png") no-repeat center center fixed;*/
-    background: #c85e06 !important;
-    background-color: #c85e06 !important;
+    background: #c0ce29 !important;
+    background-color: #c0ce29 !important;
     background-size: cover;
     height: 100%;
 }
