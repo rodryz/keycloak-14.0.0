@@ -40,7 +40,7 @@
 <div class="${properties.kcLoginClass!}" style="background: #c0ce29 !important">
     <div id="kc-header" class="${properties.kcHeaderClass!}">
         <div id="kc-header-wrapper"
-             class="${properties.kcHeaderWrapperClass!}">
+             class="${properties.kcHeaderWrapperClass!}" style="display:flex; justify-content:center; align-items:center;">
             <#if properties.headerLogoImage?has_content>
                 <img src="${url.resourcesPath}/img/${properties.headerLogoImage}" style="width:150px; flex-align:start" alt="logo">
             </#if>
