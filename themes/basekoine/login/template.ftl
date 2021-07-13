@@ -39,13 +39,13 @@
 <body class="${properties.kcBodyClass!}" style="background: #c0ce29 !important">
 <div class="${properties.kcLoginClass!}" style="background: #c0ce29 !important">
     <div id="kc-header" class="${properties.kcHeaderClass!}">
-        <#if properties.headerLogoImage?has_content>
-            <div>
-                <img src="${url.resourcesPath}/img/${properties.headerLogoImage}" alt="logo">
-            </div>
-        </#if>
         <div id="kc-header-wrapper"
-             class="${properties.kcHeaderWrapperClass!}">${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}</div>
+             class="${properties.kcHeaderWrapperClass!}">
+            <#if properties.headerLogoImage?has_content>
+                <img src="${url.resourcesPath}/img/${properties.headerLogoImage}" style="width:150px; flex-align:start" alt="logo">
+            </#if>
+             ${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}
+        </div>
     </div>
     <div class="${properties.kcFormCardClass!}">
         <header class="${properties.kcFormHeaderClass!}">
