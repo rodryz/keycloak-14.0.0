@@ -41,7 +41,7 @@
     <div id="kc-header" class="${properties.kcHeaderClass!}">
         <#if properties.b64HeaderLogoImage?has_content>
             <div>
-                <img src="data:image/png;base64, ${properties.b64HeaderLogoImage}" alt="logo">
+                <img src="${url.resourcesPath}/img/${properties.headerLogoImage}" alt="logo">
             </div>
         </#if>
         <div id="kc-header-wrapper"
