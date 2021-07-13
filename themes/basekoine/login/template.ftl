@@ -39,7 +39,7 @@
 <body class="${properties.kcBodyClass!}" style="background: #c0ce29 !important">
 <div class="${properties.kcLoginClass!}" style="background: #c0ce29 !important">
     <div id="kc-header" class="${properties.kcHeaderClass!}">
-        <#if properties.b64HeaderLogoImage?has_content>
+        <#if properties.headerLogoImage?has_content>
             <div>
                 <img src="${url.resourcesPath}/img/${properties.headerLogoImage}" alt="logo">
             </div>
