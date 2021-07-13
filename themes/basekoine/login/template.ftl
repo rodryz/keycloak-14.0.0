@@ -39,6 +39,11 @@
 <body class="${properties.kcBodyClass!}" style="background: #c0ce29 !important">
 <div class="${properties.kcLoginClass!}" style="background: #c0ce29 !important">
     <div id="kc-header" class="${properties.kcHeaderClass!}">
+        <#if properties.b64HeaderLogoImage?has_content>
+            <div>
+                <img src="data:image/png;base64, ${properties.b64HeaderLogoImage}" alt="logo">
+            </div>
+        </#if>
         <div id="kc-header-wrapper"
              class="${properties.kcHeaderWrapperClass!}">${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}</div>
     </div>
